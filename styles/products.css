@@ -1,0 +1,202 @@
+/* Products Album Setcion */
+main .products-album {
+  padding: 20px;
+  padding-top: 200px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+@media (max-width: 920px) {
+  main .products-album{
+    padding-top: 80px;
+  }
+}
+
+.images-album {
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  grid-template-rows: repeat(2,450px);
+  place-content: center;
+  gap: 16px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.album-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.album-item:hover{
+  transform: scale(0.9,0.9);
+}
+
+.album-item:nth-child(4) {
+    grid-column: 1/3;
+}
+
+.overline{
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: .3s ease-out;
+}
+
+.overline:hover{
+    background: rgba(0, 0, 0, 0);
+}
+
+.album-item .album-item-btn {
+  background: none;
+  border: 2px solid white;
+  color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+.album-item .album-item-btn,
+.album-item .album-item-btn i{
+    transition: .3s ease-in-out;
+}
+
+.album-item .album-item-btn:hover{
+    background: #fff;
+    color: black;
+}
+
+@media (max-width: 1300px) {
+  .images-album {
+    grid-template-columns: repeat(2, 400px);
+    grid-template-rows: repeat(2,300px);
+  }
+  .album-item:nth-child(5) {
+    grid-row: 2/3;
+    grid-column: 2/3;
+}
+}
+
+@media (max-width: 850px) {
+  .images-album {
+  grid-template-columns: repeat(1, 400px);
+  grid-template-rows: repeat(1,auto);
+  align-items: center;
+
+  }
+
+  .album-item:nth-child(4) {
+    grid-column: unset;
+}
+
+.album-item:nth-child(5) {
+    grid-row: unset;
+    grid-column: unset;
+}
+}
+
+@media (max-width: 420px) {
+    .images-album {
+      grid-template-columns: repeat(1, 320px);
+
+    }
+  }
+
+  @media (max-width: 330px) {
+    .images-album {
+      grid-template-columns: repeat(1, 290px);
+
+    }
+  }
+
+/* Slider Siction */
+
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px;
+  }
+
+  .slider {
+    display: flex;
+    align-items: center;
+    transition: all .3s ease-in-out;
+  }
+
+  .slider-item {
+    min-width: 50%;
+    text-align: center;
+    padding: 16px;
+    border-right: 1px solid #ccc;
+    transition: all .3s linear;
+  }
+
+  .slider-item:last-child {
+    border-right: none;
+  }
+
+  .slider-item img {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 16px;
+  }
+
+  .slider-item h3 {
+    margin-bottom: 8px;
+  }
+
+  .slider-item p {
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: #666;
+  }
+
+.slider-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 15px 15px 15px;
+}
+
+.slider-buttons button{
+    padding: 15px 25px;
+    background: none;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 20px;
+    transition: .2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.slider-buttons button:hover{
+    background: rgba(102, 102, 102, 0.427);
+}
+
+@media (max-width: 768px) {
+  .slider-item img {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-item img {
+    max-width: 100px;
+  }
+
+  .slider-item :where(h3 , p){
+    font-size: 0.8em;
+  }
+}
