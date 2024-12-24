@@ -59,6 +59,8 @@ window.addEventListener("load", () => {
   if (localStorage.getItem("hideElement") === "true") {
     document.getElementById("acountButton").style.display = "none";
     document.getElementById("change").innerHTML =
-      'Welcome, User <a href="acount.html" class="text-info fs-6">Sign Out</a>';
+      'Welcome, User <a href="index.html" class="text-info fs-6">Sign Out</a>';
   }
 });
+
+

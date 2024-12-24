@@ -36,13 +36,13 @@
           </div>
           <span>or use your account</span>
           <input type="email" id="signInEmail" placeholder="Email" />
-          <p id="messageI" style="display: none; margin: 0"></p>
           <input
-            type="password"
-            required
-            id="password"
-            placeholder="Password"
+          type="password"
+          id="password"
+          class="signInPassword"
+          placeholder="Password"
           />
+          <p id="messageI" style="display: none; margin: 0"></p>
           <a href="home.html">Forgot Your Password, Return to FAQS</a>
           <a href="index.html">Return to Home</a>
           <input type="submit" value="Sign In" />
@@ -65,13 +65,19 @@
           <span>or use your email for registration</span>
           <input type="text" required placeholder="Name" />
           <input type="email" id="signUpEmail" placeholder="Email" />
-          <p id="messageU" style="display: none; margin: 0"></p>
+          <input
+          type="password"
+          class="signUpPassword"
+          id="password"
+          placeholder="Password"
+          />
           <input
             type="password"
-            required
+            class="signUpConfirmPassword"
             id="password"
-            placeholder="Password"
-          />
+            placeholder="Confirm Password"
+            />
+            <p id="messageU" style="display: none; margin: 0"></p>
           <input type="submit" value="Sign Up" />
         </form>
       </div>

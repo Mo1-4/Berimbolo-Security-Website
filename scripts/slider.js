@@ -1,3 +1,4 @@
+// Slider
 const slider = document.querySelector('.slider');
     const prevButton = document.getElementById('prev');
     const nextButton = document.getElementById('next');
@@ -18,5 +19,18 @@ function updateSliderPosition() {
     updateSliderPosition();
     });
 
-    // Ensure the slider adapts to window resize
     window.addEventListener('resize', updateSliderPosition);
+
+    // login and signup
+    let productsBtn = document.querySelectorAll(".album-item-btn");
+
+    productsBtn.forEach((productBtn) => {
+      window.addEventListener("load", () => {
+        if (localStorage.getItem("hideElement") === "true") {
+          productBtn.onclick = () => {
+            window.location.href = "#";
+          }
+        }
+      });
+    });
+

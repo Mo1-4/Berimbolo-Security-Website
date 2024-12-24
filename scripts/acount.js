@@ -31,42 +31,68 @@ passwords.forEach((pass) => {
 document.getElementById("signInForm").addEventListener("submit", (event) => {
   const emailInput = document.getElementById("signInEmail").value;
   const message = document.getElementById("messageI");
-
-  if (validateEmail(emailInput)) {
+  const signInPassword = document.querySelector(".signInPassword").value;
+  if (emailInput == "" || signInPassword == "") {
+    message.style.display = "block";
+    message.textContent = "Invalid Form address. Please try again.";
+    message.style.color = "red";
+    event.preventDefault();
+  } else if (!validateEmail(emailInput)){
+    message.style.display = "block";
+    message.textContent = "Invalid Email address. Please try again.";
+    message.style.color = "red";
+    event.preventDefault();
+  } else if (signInPassword.length < 8){
+    message.style.display = "block";
+    message.textContent = "Invalid Password address. Please try again.";
+    message.style.color = "red";
+    event.preventDefault();
+   } else {
     event.preventDefault();
     message.style.display = "block";
-    message.textContent = "Valid email address!";
+    message.textContent = "Valid Form address!";
     message.style.color = "green";
     setTimeout(() => {
       localStorage.setItem("hideElement", "true");
       window.location.href = "home.html";
     }, 2000);
-  } else {
-    message.style.display = "block";
-    message.textContent = "Invalid email address. Please try again.";
-    message.style.color = "red";
-    event.preventDefault();
   }
 });
 
 document.getElementById("signUpForm").addEventListener("submit", (event) => {
   const emailInput = document.getElementById("signUpEmail").value;
   const message = document.getElementById("messageU");
-
-  if (validateEmail(emailInput)) {
+  const signUpPassword = document.querySelector(".signUpPassword").value;
+  const signUpConfirmPassword = document.querySelector(".signUpConfirmPassword").value
+  if (emailInput == "" || signUpPassword == "") {
+    message.style.display = "block";
+    message.textContent = "Invalid Form address. Please try again.";
+    message.style.color = "red";
+    event.preventDefault();
+  } else if (!validateEmail(emailInput)){
+    message.style.display = "block";
+    message.textContent = "Invalid Email address. Please try again.";
+    message.style.color = "red";
+    event.preventDefault();
+  } else if (signUpPassword.length < 8){
+    message.style.display = "block";
+    message.textContent = "Invalid Password address. Please try again.";
+    message.style.color = "red";
+    event.preventDefault();
+   } else if (signUpConfirmPassword != signUpPassword){
+    message.style.display = "block";
+    message.textContent = "Invalid Correct Password address. Please try again.";
+    message.style.color = "red";
+   }
+   else {
     event.preventDefault();
     message.style.display = "block";
-    message.textContent = "Valid email address!";
+    message.textContent = "Valid Form address!";
     message.style.color = "green";
     setTimeout(() => {
       localStorage.setItem("hideElement", "true");
       window.location.href = "home.html";
-    }, 3000);
-  } else {
-    message.style.display = "block";
-    message.textContent = "Invalid email address. Please try again.";
-    message.style.color = "red";
-    event.preventDefault();
+    }, 2000);
   }
 });
 
