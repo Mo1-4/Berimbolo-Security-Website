@@ -283,6 +283,9 @@ a {
   gap: 15px;
 }
 
+.btn-special{
+  background: radial-gradient(circle at 3% 7.4%, rgb(0, 144, 243) 0%, rgb(0, 86, 240) 90%);
+}
 .hero .hero-image img {
   width: 600px;
   height: 500px;
