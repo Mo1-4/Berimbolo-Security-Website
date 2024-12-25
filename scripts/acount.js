@@ -83,6 +83,7 @@ document.getElementById("signUpForm").addEventListener("submit", (event) => {
     message.style.display = "block";
     message.textContent = "Invalid Correct Password address. Please try again.";
     message.style.color = "red";
+    event.preventDefault();
    }
    else {
     event.preventDefault();
